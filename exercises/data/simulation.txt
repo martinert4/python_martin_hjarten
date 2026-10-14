@@ -1,0 +1,40 @@
+--- Simulering med 10 kast ---
+Sida 1: Antal = 1, Sannolikhet = 10.00%
+Sida 2: Antal = 2, Sannolikhet = 20.00%
+Sida 3: Antal = 2, Sannolikhet = 20.00%
+Sida 4: Antal = 4, Sannolikhet = 40.00%
+Sida 5: Antal = 1, Sannolikhet = 10.00%
+Sida 6: Antal = 0, Sannolikhet = 0.00%
+
+--- Simulering med 100 kast ---
+Sida 1: Antal = 22, Sannolikhet = 22.00%
+Sida 2: Antal = 13, Sannolikhet = 13.00%
+Sida 3: Antal = 16, Sannolikhet = 16.00%
+Sida 4: Antal = 17, Sannolikhet = 17.00%
+Sida 5: Antal = 15, Sannolikhet = 15.00%
+Sida 6: Antal = 17, Sannolikhet = 17.00%
+
+--- Simulering med 1000 kast ---
+Sida 1: Antal = 170, Sannolikhet = 17.00%
+Sida 2: Antal = 144, Sannolikhet = 14.50%
+Sida 3: Antal = 183, Sannolikhet = 18.30%
+Sida 4: Antal = 180, Sannolikhet = 18.10%
+Sida 5: Antal = 142, Sannolikhet = 14.30%
+Sida 6: Antal = 178, Sannolikhet = 17.80%
+
+--- Simulering med 10000 kast ---
+Sida 1: Antal = 1641, Sannolikhet = 16.41%
+Sida 2: Antal = 1670, Sannolikhet = 16.70%
+Sida 3: Antal = 1714, Sannolikhet = 17.14%
+Sida 4: Antal = 1611, Sannolikhet = 16.11%
+Sida 5: Antal = 1673, Sannolikhet = 16.73%
+Sida 6: Antal = 1691, Sannolikhet = 16.91%
+
+--- Simulering med 100000 kast ---
+Sida 1: Antal = 16710, Sannolikhet = 16.71%
+Sida 2: Antal = 16739, Sannolikhet = 16.74%
+Sida 3: Antal = 16753, Sannolikhet = 16.75%
+Sida 4: Antal = 16331, Sannolikhet = 16.33%
+Sida 5: Antal = 16756, Sannolikhet = 16.76%
+Sida 6: Antal = 16711, Sannolikhet = 16.71%
+
