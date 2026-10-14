@@ -1,9 +1,9 @@
-#	Läs in datan: Spara i en struktur så man vet värden som hör till Pichu respektive Pikachu.
+#	Läs in datan: Spara  så man vet värden som hör till Pichu respektive Pikachu.
 
 #skapa funktion för att läsa in filerna 
 
 def las_in_pokemon(filnamn):
-    temp_lista = []  # En tom lista som fylls på inuti funktionen
+    temp_lista = []  
     
     with open(filnamn, "r") as fil:
         for rad in fil:
@@ -55,7 +55,9 @@ for p in pikachu_lista:
 
 
 
-# Användarinput: Låt en användare skriva in valfri bredd och höjd i terminalen. Bygg in felhantering  så att programmet inte kraschar om användaren råkar skriva in bokstäver eller negativa tal.
+# Användarinput: skriv in valfri bredd och höjd. felhantering  så att programmet 
+# inte kraschar om användaren råkar skriva in bokstäver eller negativa tal.
+
 while True:
     try:
         input_bredd = float(input('Ange en bredd i cm: '))
@@ -88,6 +90,7 @@ while True:
         continue  # Startar om loopen direkt om användaren skrev bokstäver
 
 
+# Skapa en lista på användarinput
 användar_punkt = [input_bredd,input_höjd]
 
 # Skapa tomma listor för x och y för Pichu
@@ -97,8 +100,7 @@ användar_punkt_y = []
 användar_punkt_x = användar_punkt[0]
 användar_punkt_y = användar_punkt[1]
 
-#print(användar_punkt_x)
-#print(användar_punkt_y)
+
 
 # De 5 närmaste (Majoritetsröstning): Istället för att bara titta på en närmaste punkt, 
 # ska man nu leta upp de 5 närmaste punkterna. Om till exempel 3 av dem är Pikachus 
@@ -130,7 +132,7 @@ avstånd_pikachu = fem_kortaste_avstånd(användar_punkt, pikachu_lista)
 minsta_av_pichu = []
 minsta_av_pikachu = []
 
-# --- VARV 1 ---
+# VARV 1 
 if avstånd_pikachu[0] < avstånd_pichu[0]:
     minsta_av_pikachu.append(avstånd_pikachu[0])
     del avstånd_pikachu[0]
@@ -138,7 +140,8 @@ else:
     minsta_av_pichu.append(avstånd_pichu[0])
     del avstånd_pichu[0]  # RÄTTAT: Tog bort stavfelet _pichu_pichu
 
-# --- VARV 2 ---
+
+# VARV 2
 if avstånd_pikachu[0] < avstånd_pichu[0]:
     minsta_av_pikachu.append(avstånd_pikachu[0])
     del avstånd_pikachu[0]
@@ -146,7 +149,9 @@ else:
     minsta_av_pichu.append(avstånd_pichu[0])
     del avstånd_pichu[0]  # RÄTTAT: Ändrat från del avstånd_pikachu till pichu
 
-# --- VARV 3 ---
+
+
+# VARV 3
 if avstånd_pikachu[0] < avstånd_pichu[0]:
     minsta_av_pikachu.append(avstånd_pikachu[0])
     del avstånd_pikachu[0]
@@ -154,7 +159,7 @@ else:
     minsta_av_pichu.append(avstånd_pichu[0])
     del avstånd_pichu[0]  # RÄTTAT: Ändrat från del avstånd_pikachu till pichu
 
-# --- VARV 4 ---
+# VARV 4 
 if avstånd_pikachu[0] < avstånd_pichu[0]:
     minsta_av_pikachu.append(avstånd_pikachu[0])
     del avstånd_pikachu[0]
@@ -162,7 +167,7 @@ else:
     minsta_av_pichu.append(avstånd_pichu[0])
     del avstånd_pichu[0]  # RÄTTAT: Ändrat från del avstånd_pikachu till pichu
 
-# --- VARV 5 ---
+# VARV 5
 if avstånd_pikachu[0] < avstånd_pichu[0]:
     minsta_av_pikachu.append(avstånd_pikachu[0])
     del avstånd_pikachu[0]
