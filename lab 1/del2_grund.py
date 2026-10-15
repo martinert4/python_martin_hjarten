@@ -1,6 +1,4 @@
-#	Läs in datan: Spara  så man vet värden som hör till Pichu respektive Pikachu.
-
-#skapa funktion för att läsa in filerna 
+### skapa funktion för att läsa in filerna ###
 
 def las_in_pokemon(filnamn):
     temp_lista = []  
@@ -30,17 +28,17 @@ pichu_lista = las_in_pokemon("data/pichu.txt")
 pikachu_lista = las_in_pokemon("data/pikachu.txt")
 
 
+#### Skapa listor för x och y för alla punkter ###
 
 
-# Skapa listor för x och y för alla punkter
 
 # Skapa tomma listor för x och y för Pichu
 pichu_x = []
 pichu_y = []
 
 for p in pichu_lista:
-    pichu_x.append(p[0]) # index 0 är bredd (X)
-    pichu_y.append(p[1]) # index 1 är höjd (Y)
+    pichu_x.append(p[0]) 
+    pichu_y.append(p[1]) 
 
 
 
@@ -49,14 +47,15 @@ pikachu_x = []
 pikachu_y = []
 
 for p in pikachu_lista:
-    pikachu_x.append(p[0]) # index 0 är bredd (X)
-    pikachu_y.append(p[1]) # index 1 är höjd (Y)
+    pikachu_x.append(p[0]) 
+    pikachu_y.append(p[1]) 
 
 
+### Del 2 börjar här ###
 
-
-# Användarinput: skriv in valfri bredd och höjd. felhantering  så att programmet 
-# inte kraschar om användaren råkar skriva in bokstäver eller negativa tal.
+### Användarinput: Låt en användare skriva in valfri bredd och höjd i terminalen. 
+# Bygg in felhantering  så att programmet inte kraschar om användaren råkar skriva 
+# in bokstäver eller negativa tal ###
 
 while True:
     try:
@@ -90,25 +89,25 @@ while True:
         continue  # Startar om loopen direkt om användaren skrev bokstäver
 
 
-# Skapa en lista på användarinput
-användar_punkt = [input_bredd,input_höjd]
+användar_punkt = [input_bredd,input_höjd] # Skapa lista för användarpunkt
 
-# Skapa tomma listor för x och y för Pichu
+# Skapa tomma listor för x y användarpunkt
 användar_punkt_x = []
 användar_punkt_y = []
 
 användar_punkt_x = användar_punkt[0]
 användar_punkt_y = användar_punkt[1]
 
+#print(användar_punkt_x)
+#print(användar_punkt_y)
 
-
-# De 5 närmaste (Majoritetsröstning): Istället för att bara titta på en närmaste punkt, 
-# ska man nu leta upp de 5 närmaste punkterna. Om till exempel 3 av dem är Pikachus 
-# och 2 är Pichus, vinner Pikachu eftersom det är i majoritet.
+### De 5 närmaste (Majoritetsröstning): Istället för att bara titta på en närmaste punkt, 
+# ska man nu leta upp de 5 närmaste punkterna. Om till exempel 3 av dem är Pikachus och 2 är 
+# Pichus, vinner Pikachu eftersom det är i majoritet. ###
 
 import math
 
-# Din avståndsfunktion
+# avståndsfunktion
 def avstånd(x1, y1, x2, y2):
     avstånd_beräkning = math.sqrt((x2-x1)**2 + (y2-y1)**2)
     return avstånd_beräkning 
@@ -132,48 +131,17 @@ avstånd_pikachu = fem_kortaste_avstånd(användar_punkt, pikachu_lista)
 minsta_av_pichu = []
 minsta_av_pikachu = []
 
-# VARV 1 
-if avstånd_pikachu[0] < avstånd_pichu[0]:
-    minsta_av_pikachu.append(avstånd_pikachu[0])
-    del avstånd_pikachu[0]
-else: 
-    minsta_av_pichu.append(avstånd_pichu[0])
-    del avstånd_pichu[0]  # RÄTTAT: Tog bort stavfelet _pichu_pichu
+for p in range(5):
 
 
-# VARV 2
-if avstånd_pikachu[0] < avstånd_pichu[0]:
-    minsta_av_pikachu.append(avstånd_pikachu[0])
-    del avstånd_pikachu[0]
-else: 
-    minsta_av_pichu.append(avstånd_pichu[0])
-    del avstånd_pichu[0]  # RÄTTAT: Ändrat från del avstånd_pikachu till pichu
+    if avstånd_pikachu[0] < avstånd_pichu[0]:
+        minsta_av_pikachu.append(avstånd_pikachu[0])
+        del avstånd_pikachu[0]
+    else: 
+        minsta_av_pichu.append(avstånd_pichu[0])
+        del avstånd_pichu[0]  
 
 
-
-# VARV 3
-if avstånd_pikachu[0] < avstånd_pichu[0]:
-    minsta_av_pikachu.append(avstånd_pikachu[0])
-    del avstånd_pikachu[0]
-else: 
-    minsta_av_pichu.append(avstånd_pichu[0])
-    del avstånd_pichu[0]  # RÄTTAT: Ändrat från del avstånd_pikachu till pichu
-
-# VARV 4 
-if avstånd_pikachu[0] < avstånd_pichu[0]:
-    minsta_av_pikachu.append(avstånd_pikachu[0])
-    del avstånd_pikachu[0]
-else: 
-    minsta_av_pichu.append(avstånd_pichu[0])
-    del avstånd_pichu[0]  # RÄTTAT: Ändrat från del avstånd_pikachu till pichu
-
-# VARV 5
-if avstånd_pikachu[0] < avstånd_pichu[0]:
-    minsta_av_pikachu.append(avstånd_pikachu[0])
-    del avstånd_pikachu[0]
-else: 
-    minsta_av_pichu.append(avstånd_pichu[0])
-    del avstånd_pichu[0]  # RÄTTAT: Ändrat från del avstånd_pikachu till pichu
 
 
 #Slutsats
@@ -187,8 +155,8 @@ print("Närmaste Pikachu-grannar:", minsta_av_pikachu)
 print("Närmaste Pichu-grannar:", minsta_av_pichu)
 
 
-# Visualisering: Plotta användarpunkten i ett koordinatsystem. 
-# Pichu-punkterna blå färg och Pikachu  röd färg.
+### Visualisering: Plotta användarpunkten i ett koordinatsystem. 
+# Pichu-punkterna blå färg och Pikachu  röd färg. ###
 
 # skapa tomma listor för x och y för Pichu
 pichu_x = []
@@ -211,7 +179,7 @@ for p in pikachu_lista:
 
 
 
-
+# plott inklusive användarpunkt
 import matplotlib.pyplot as plt
 
 # Skapa själva fönstret
@@ -239,5 +207,10 @@ plt.legend()
 # rutnät så det blir lättare att läsa av koordinater
 plt.grid(True, linestyle="--", alpha=0.5)
 
+
+plt.axis('equal')
 # Visa diagrammet på skärmen!
 plt.show()
+
+
+

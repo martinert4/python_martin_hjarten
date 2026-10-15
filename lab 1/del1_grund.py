@@ -1,9 +1,7 @@
-#	Läs in datan: Spara i en struktur så man vet värden som hör till Pichu respektive Pikachu.
-
-#skapa funktion för att läsa in filerna 
+### skapa funktion för att läsa in filerna ###
 
 def las_in_pokemon(filnamn):
-    temp_lista = []  # En tom lista som fylls på inuti funktionen
+    temp_lista = []  
     
     with open(filnamn, "r") as fil:
         for rad in fil:
@@ -30,20 +28,17 @@ pichu_lista = las_in_pokemon("data/pichu.txt")
 pikachu_lista = las_in_pokemon("data/pikachu.txt")
 
 
+#### Skapa listor för x och y för alla punkter ###
 
 
-
-
-
-# Skapa listor för x och y för alla punkter
 
 # Skapa tomma listor för x och y för Pichu
 pichu_x = []
 pichu_y = []
 
 for p in pichu_lista:
-    pichu_x.append(p[0]) # index 0 är bredd (X)
-    pichu_y.append(p[1]) # index 1 är höjd (Y)
+    pichu_x.append(p[0]) 
+    pichu_y.append(p[1]) 
 
 
 
@@ -52,18 +47,14 @@ pikachu_x = []
 pikachu_y = []
 
 for p in pikachu_lista:
-    pikachu_x.append(p[0]) # index 0 är bredd (X)
-    pikachu_y.append(p[1]) # index 1 är höjd (Y)
+    pikachu_x.append(p[0]) 
+    pikachu_y.append(p[1]) 
 
 
 
 
-# Hårdkodade testpunkter
+# testpunkter 
 testpunkter_lista = [[25, 35], [15,14], [26,30], [22,45]]
-
-
-
-
 
 
 # Skapa tomma listor för x och y för testpunkter
@@ -77,11 +68,7 @@ for p in testpunkter_lista:
 
 
 
-
-
-
-
-# Beräkna avstånd från respektive testpunkt
+### Beräkna avstånd från respektive testpunkt ###
 
 import math
 
@@ -113,8 +100,6 @@ def hämta_kortaste_avstånd(en_testpunkt, pokemon_lista):
     return minsta_avståndet
 
 
-
-
 # Nedan kommer beräkningarna 
 
 
@@ -140,7 +125,7 @@ for k in range(4):
 
 
 
-#Visualisering: Plotta punkter i ett koordinatsystem. Ge Pichu-punkterna blå färg och Pikachu  röd färg.
+### Plotta punkter i ett koordinatsystem. Ge Pichu-punkterna blå färg och Pikachu  röd färg. ###
 
 import matplotlib.pyplot as plt
 
@@ -169,10 +154,9 @@ plt.legend()
 # rutnät så det blir lättare att läsa av koordinater
 plt.grid(True, linestyle="--", alpha=0.5)
 
+
+plt.axis('equal')
 # Visa diagrammet på skärmen!
 plt.show()
-
-
-
 
 
